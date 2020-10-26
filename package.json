@@ -1,0 +1,46 @@
+{
+  "name": "feelings-fullstack",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.jsx": "eslint --fix"
+  },
+  "pre-commit": "lint-staged",
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "meteor-node-stubs": "^1.0.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-jss": "^10.4.0",
+    "react-router-dom": "^5.2.0",
+    "uuid": "^8.3.1",
+    "webfontloader": "^1.6.28"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-preset-meteor": "^7.9.0",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.0",
+    "eslint-plugin-meteor": "^7.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "lint-staged": "^10.4.2",
+    "pre-commit": "^1.2.2"
+  }
+}
